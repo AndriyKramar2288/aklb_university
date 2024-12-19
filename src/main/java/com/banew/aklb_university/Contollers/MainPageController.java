@@ -2,21 +2,17 @@ package com.banew.aklb_university.Contollers;
 
 import com.banew.aklb_university.entities.Publication;
 import com.banew.aklb_university.repositories.PublicationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 
-@RequestMapping(path = "/home")
+@RequestMapping(path = "/")
 @Controller
 public class MainPageController {
     private PublicationRepository publicationRepository;
 
-    @Autowired
+    // @Autowired
     public MainPageController(
             PublicationRepository publicationRepository
     ) {
@@ -28,8 +24,8 @@ public class MainPageController {
         var aboba = new Publication();
         aboba.setTitle("ASDDDDDD");
 
-        model.addAttribute("recent_publication", publicationRepository.findAll());
-        return "index_mymy";
+        model.addAttribute("recent_publication", publicationRepository.recentPublication(4));
+        return "main";
     }
 
     @PostMapping(path = "/create")
@@ -39,7 +35,7 @@ public class MainPageController {
         publication.setTitle(name);
         publicationRepository.save(publication);
 
-        return "index_mymy";
+        return "main";
     }
 
 //    @ModelAttribute(name = "recent_publication")
