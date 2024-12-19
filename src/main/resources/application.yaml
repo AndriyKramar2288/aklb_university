@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: aklb_university
+  datasource:
+    url: ${DB_URL}
+    name: ${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: update

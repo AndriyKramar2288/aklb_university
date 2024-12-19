@@ -1,0 +1,403 @@
+:root {
+	--whiteIcon: #C16815;
+	--white1: #FFEAC5;
+	--white2: #FFDBB5;
+	--black0: #2b1909;
+	--black1: #6C4E31;
+	--black2: #603F26;
+}
+
+body::-webkit-scrollbar {  
+  display: none;
+}
+BODY {
+	background-image: url("/img/background.png");
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0px;
+}
+a {
+	text-decoration: none;
+}
+/*
+------------=================------------
+							ВЕРХНЯ ПАНЕЛЬ
+------------=================------------
+*/
+.top_bar {
+	display: flex;
+	width: 100%;
+	height: 90px;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 20px;
+	background-color: var(--black2);
+}
+.top_bar div, header {
+	margin: 0 4px;
+}
+
+.top_bar header {
+	text-align: left;
+ 	vertical-align: middle;
+	background-color: var(--black1);
+	color: var(--white1);
+	padding: 0 10px;
+	height: 90px;
+	display: flex;
+	width: calc((100% - (98px * 3)) / 2);
+	position: relative;
+	top: 4px;
+	box-shadow: 5px 5px 5px var(--black0);
+}
+
+#search_line form {
+	width: 80%;
+	height: 30%;
+}
+
+#search_line input {
+	width: 100%;
+	top: 100%;
+	position: relative;
+	border: 1px solid #cccccc;
+  border-radius: 10px; 
+  font-family: 'Brush Script MT', cursive;
+	font-size: 20px;
+	color: var(--black0);
+	box-shadow: 5px 5px 5px var(--black0);
+}
+#search_line svg {
+	top: 50%;
+	left: 5%;
+	transform: translate(-50%, -50%);
+	position: relative;
+	width: 10%;
+	height: 20px;
+}
+.square_button {
+	width: 90px;
+	height: 90px;
+	transition: all .2s;
+	background-color: var(--black2);
+}
+.square_button:hover, .funny_boxes:hover:not(#main_icon):not(#sad_boxes) {
+	transform: scale(1.03);
+	background-color: var(--black0);
+	cursor: pointer;
+	box-shadow: 5px 5px 5px var(--black0);
+}
+#sad_boxes {
+	background-color: var(--whiteIcon);
+}
+.square_button img, .square_button svg, .funny_boxes svg {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: relative;
+	width: 50px;
+	height: 50px;
+}
+/*
+------------=================------------
+					ІНФОРМАЦІЙНИЙ БЛОК
+------------=================------------
+*/
+.info_section {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+.info_block {
+	width: 45%;
+	height: auto;
+	float: left;
+	background-color: #000000;
+	color: var(--white1);
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	align-items: center;
+	margin: 40px 0px;
+}
+.funny_boxes_section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: rgba(43, 25, 9, 0.85);
+}
+.funny_boxes, .funny_boxes_section a {
+	background-color: var(--black0);
+	border: 5px;
+	border-radius: 10px;
+	margin: 20px;
+	text-align: center;
+	width: 20%;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	transition: all .2s;
+}
+#main_icon {
+	max-height: 21%;
+	max-width: 21%;
+	background-color: transparent;
+}
+.funny_boxes h2, .info_block h2 { 
+	text-shadow: 3px 3px 3px var(--black2);
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.funny_boxes svg, .funny_boxes img {
+	top: 25%;
+	margin-bottom: 10px;
+}
+.info_block h2 svg {
+	width: 20px;
+	height: 20px;
+}
+.basic p, .basic ul, .basic ol {
+	font-size: 15px;
+	color: var(--black0);
+	margin: 5px;
+}
+.basic table, .basic th, .basic td {
+  color: var(--white1);
+	font-size: 15px;
+	padding: 4px;
+}
+.info_block li {
+	margin: 10px 0;
+}
+.info_block th {
+	background-color: var(--black1);
+}
+.info_block li:nth-child(odd), .info_block tr:nth-child(odd) {
+	background-color: var(--black0);
+}
+.info_block li:nth-child(even), .info_block tr:nth-child(even) {
+	background-color: #000000;
+}
+#basic {
+	display: flex;
+	flex-direction: column;
+	font-family: "Tahoma";
+}
+/*
+------------=================------------
+								ФУТЕР
+------------=================------------
+*/
+footer {
+	background-color: var(--black2);
+	width: 100%;
+	height: 90px;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+footer div {
+	margin: 0 10px;
+}
+
+.footer_boxik {
+	position: relative;
+	top: -4px;
+	display: flex;
+	#padding: 20px;
+	width: calc(50% - 110px*2);
+	background-color: var(--black1);
+	color: var(--white1);
+	vertical-align: middle;
+	text-align: center;
+	font-family: "Tahoma";
+	font-size: 10px;
+}
+
+.footer_boxik svg {
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 50%;
+	left: 90%;
+	transform: translate(-50%, -50%);
+}
+/*
+------------=================------------
+								СЛАЙДЕР
+------------=================------------
+*/
+#slider {
+    height: 480px;
+}
+
+#slides article{
+	width: 20%;
+	float: left;
+}
+
+#slides .image{
+	width: 500%;
+	line-height: 0;
+}
+
+#overflow{
+	width: 100%;
+	overflow: hidden;
+}
+
+#slides article img{
+	width: 100%;
+}
+
+#switch1:checked ~ #controls label:nth-child(3), 
+#switch2:checked ~ #controls label:nth-child(1),
+#switch3:checked ~ #controls label:nth-child(2){
+	background: url('/img/prev.png') no-repeat;
+	float: left;
+	display: block;
+	height: 68px;
+	width: 68px;
+}
+
+#switch1:checked ~ #controls label:nth-child(2), 
+#switch2:checked ~ #controls label:nth-child(3),
+#switch3:checked ~ #controls label:nth-child(1){
+	background: url('/img/next.png') no-repeat;
+	float: right;
+	display: block;
+	height: 68px;
+	width: 68px;
+}
+
+#slider input {
+	display: none;
+}
+
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image{
+	margin-left: -300%;
+}
+
+#switch5:checked ~ #slides .image{
+	margin-left: -400%;
+}
+
+#controls{
+	margin: -40% 0 0 0;
+	width: 100%;
+	height: 20px;
+}
+
+#slides .image{
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover{
+	opacity: 0.6;
+	cursor: pointer;
+	transition: opacity 0.2s ease-out;
+}
+/*
+------------=================------------
+						ВИЇЖДЖАЮЧЕ МЕНЮ
+------------=================------------
+*/
+#to_hide_dwarf {
+	display: none;
+	margin-right: 0;
+}
+.dwarf_menu {
+	box-shadow: 0 0 10px var(--whiteIcon);
+	background-color: var(--whiteIcon);
+	display: flex;
+	justify-content: center;
+	display: none;
+	min-width: 72vw;
+	margin: 5px;
+	margin-left: 0;
+	align-items: center;
+}
+.dwarf_button {
+	background-color: var(--black1);
+	color: var(--white1);
+	text-align: center;
+	box-shadow: 5px 5px 5px var(--black0);
+	align-items: center;
+	transition: all .2s;
+	display: inline-block;
+	margin: 10px;
+	flex: 1;
+	padding: 3px;
+}
+
+.dwarf_button:hover, #to_hide_dwarf:hover {
+	transform: scale(1.03);
+	cursor: pointer;
+	opacity: .77;
+}
+.dwarf_button svg, .dwarf_button img {
+	width: 40px;
+	height: 40px;
+	top: 2px;
+	position: relative;
+}
+/*
+------------=================------------
+							 МЕДІАЗАПИТ
+------------=================------------
+*/
+@media (max-width: 1000px) {
+	.top_bar, footer {
+		justify-content: center;
+	}
+	#main_icon, #search_line, #carousel_block, .footer_boxik, .top_bar .square_button {
+		display: none;
+	}
+	#introduction {
+		min-width: 70vw;
+	}
+  .funny_boxes_section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .funny_boxes  {
+  	min-width: 60%;
+  }
+  .info_block {
+  	min-width: 80%;
+  }
+  .funny_boxes img {
+  	width: 100%;
+  }
+  .info_section {
+  	flex-direction: column;
+  	align-items: center;
+  }
+  #to_hide_dwarf {
+		display: block;
+	}
+	#to_hide_dwarf:hover ~ .dwarf_menu, .dwarf_menu:hover {
+		display: flex;
+	}
+	#to_hide_dwarf:hover ~ #introduction {
+		display: none;
+	}
+	.dwarf_menu:hover ~ #introduction {
+		display: none;
+	}
+}
