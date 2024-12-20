@@ -5,6 +5,9 @@ import com.banew.aklb_university.repositories.PublicationRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RequestMapping(path = "/")
@@ -12,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class MainPageController {
     private PublicationRepository publicationRepository;
 
-    // @Autowired
     public MainPageController(
             PublicationRepository publicationRepository
     ) {
@@ -21,12 +23,15 @@ public class MainPageController {
 
     @GetMapping
     public String HomePage(Model model) {
-        var aboba = new Publication();
-        aboba.setTitle("ASDDDDDD");
-
         model.addAttribute("recent_publication", publicationRepository.recentPublication(4));
         return "main";
     }
+
+    // @GetMapping("/login")
+    // public String getMethodName(@RequestParam String param) {
+    //     return "login";
+    // }
+    
 
     @PostMapping(path = "/create")
     public String CreatePublication(@RequestParam(name = "negro") String name) {
@@ -37,16 +42,4 @@ public class MainPageController {
 
         return "main";
     }
-
-//    @ModelAttribute(name = "recent_publication")
-//    List<Publication> recentPublication() {
-//        List<Publication> publications = new ArrayList<Publication>();
-//        if (publications.size() > 0) {
-//            publicationRepository.findAll().forEach(x -> { publications.add(x); });
-//            publications.sort(Comparator.comparing(Publication::getDate).reversed());
-//            return publications.subList(0, 4);
-//        }
-//        else
-//            return publications;
-//    }
 }
