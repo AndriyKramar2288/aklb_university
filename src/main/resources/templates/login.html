@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Авторизація</title>
+	<link rel="stylesheet" th:href="@{/css/global.css}" type='text/css'>
+    <link rel="stylesheet" th:href="@{/css/forms.css}" type='text/css'>
+</head>
+    <body>
+        <nav class="top_bar" th:replace="~{fragments/layout :: header(label='Авторизація')}">
+        </nav>
+        <div id="basic">
+            
+            <div class="info_section">
+                <div class="info_block" id="login_block">    
+                    <form method="post" autocomplete="off">
+                        <div class="form_field">
+                            <label>
+                                Ім'я користувача:
+                            </label>
+                            <input type="text" name="name" placeholder="Ім'я користувача"/>
+                        </div>
+                        <div class="form_field">
+                            <label>
+                                Пароль:
+                            </label>
+                            <input type="password" name="password" placeholder="Пароль"/>
+                        </div>
+                        <div class="form_button">
+                            <button type="submit">
+                                Увійти
+                            </button>
+                        </div>
+
+                        
+
+                    </form>
+                </div>
+                
+            </div>	
+            
+        </div>
+        <footer th:replace="~{fragments/layout :: footer}">
+        </footer>
+    </body>
+</html>

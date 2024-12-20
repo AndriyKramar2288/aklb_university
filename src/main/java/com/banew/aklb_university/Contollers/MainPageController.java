@@ -27,10 +27,10 @@ public class MainPageController {
         return "main";
     }
 
-    // @GetMapping("/login")
-    // public String getMethodName(@RequestParam String param) {
-    //     return "login";
-    // }
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
     
 
     @PostMapping(path = "/create")

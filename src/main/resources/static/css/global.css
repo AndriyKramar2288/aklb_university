@@ -184,6 +184,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	font-family: "Tahoma";
+	min-height: calc(100vh - 180px);
 }
 /*
 ------------=================------------
@@ -206,7 +207,6 @@ footer div {
 	position: relative;
 	top: -4px;
 	display: flex;
-	#padding: 20px;
 	width: calc(50% - 110px*2);
 	background-color: var(--black1);
 	color: var(--white1);

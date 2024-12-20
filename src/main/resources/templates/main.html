@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Головна сторінка</title>
-	<link rel="stylesheet" th:href="@{/css/style_mymy.css}" type='text/css'>
+	<link rel="stylesheet" th:href="@{/css/global.css}" type='text/css'>
 </head>
 <body>
 	<div id="basic">
-		<nav class="top_bar" th:replace="~{fragments/layout :: header}">
+		<nav class="top_bar" th:replace="~{fragments/layout :: header(label='Головна сторінка')}">
 		</nav>
 		<div>
 			<section class="funny_boxes_section">
@@ -149,5 +149,3 @@
 	</div>
 </body>
 </html>
-
-
