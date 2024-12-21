@@ -15,10 +15,6 @@ BODY {
     background-color: #e2b8218b;
 }
 
-/* #login_block {
-    padding: 40px 0;
-} */
-
 #login_block form {
     justify-content: center;
     display: flex;
@@ -29,6 +25,10 @@ BODY {
     margin-top: 30px;
     border-radius: 5px;
     transition: all 300ms ease-out;
+}
+
+#login_block {
+    padding-bottom: 30px;
 }
 
 .info_section {
@@ -45,7 +45,7 @@ BODY {
     transform: scale(1.01);
 }
 
-.form_field input {
+.form_field input, .form_field select {
     background-color: var(--black0);
     color: var(--white1);
     border: 0;
@@ -55,14 +55,13 @@ BODY {
     outline: none;
 }
 
-.form_field input:focus {
+.form_field input:focus, .form_field select:focus {
     background-color: var(--black2);
 }
 
 .form_button {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
 }
 
 .form_button button {
@@ -80,4 +79,21 @@ BODY {
     background-color: #e2b821;
     padding: 10px 15%;
     cursor: pointer;
+}
+
+.dramatical_link {
+    background-color: rgb(165, 42, 42);
+    border: 0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white2);
+    padding: 10px 5%;
+    transition: all 250ms ease-out;
+    margin-top: 30px;
+}
+
+.dramatical_link:hover {
+    background-color: rgb(106, 29, 29);
+    cursor: pointer;
+    padding: 10px 4%;
 }

@@ -31,6 +31,17 @@ public class MainPageController {
     public String loginPage() {
         return "login";
     }
+
+    @GetMapping("/register")
+    public String registerPage() {
+        return "register";
+    }
+    
+    // @GetMapping("/login/forget-password")
+    // public String forgetPassword() {
+    //     return new String();
+    // }
+    
     
 
     @PostMapping(path = "/create")

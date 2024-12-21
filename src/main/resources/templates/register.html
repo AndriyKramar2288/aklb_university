@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Реєстрація</title>
+	<link rel="stylesheet" th:href="@{/css/global.css}" type='text/css'>
+    <link rel="stylesheet" th:href="@{/css/forms.css}" type='text/css'>
+</head>
+    <body>
+        <nav class="top_bar" th:replace="~{fragments/layout :: header(label='Реєстрація')}">
+        </nav>
+        <div id="basic">
+            <div class="info_section">
+                <div class="info_block" id="login_block">    
+                    <form method="post" autocomplete="off">
+                        <div class="form_field">
+                            <label for="username">
+                                Ім'я користувача (псевдонім):
+                            </label>
+                            <input type="text" name="username" placeholder="Псевдо"/>
+                        </div>
+                        <div class="form_field">
+                            <label for="name">
+                                Ім'я:
+                            </label>
+                            <input type="text" name="name" placeholder="Ім'я"/>
+                        </div>
+                        <div class="form_field">
+                            <label for="surname">
+                               Прізвище:
+                            </label>
+                            <input type="text" name="surname" placeholder="Прізвище"/>
+                        </div>
+                        <div class="form_field">
+                            <label for="password">
+                               Пароль:
+                            </label>
+                            <input type="text" name="password" placeholder="Пароль"/>
+                        </div>
+                        <div class="form_field">
+                            <label for="password2">
+                               Пароль (ще раз):
+                            </label>
+                            <input type="text" name="password2" placeholder="Пароль (ще раз)"/>
+                        </div>
+                        <div class="form_field">
+                            <label for="position">
+                                Оберіть поточний статус:
+                            </label>
+                            <select name="position">
+                                <option value="STUDENT">
+                                    Студент
+                                </option>
+                                <option value="TEACHER">
+                                    Викладач
+                                </option>
+                                <option value="SCIENTIST">
+                                    Науковець
+                                </option>
+                                <option value="READER">
+                                    Читач
+                                </option>
+                                <option value="ETC">
+                                    Інше
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form_button">
+                            <button type="submit">
+                                Зареєструватися
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>	
+        </div>
+        <footer th:replace="~{fragments/layout :: footer}">
+        </footer>
+    </body>
+</html>

@@ -12,8 +12,7 @@
         <nav class="top_bar" th:replace="~{fragments/layout :: header(label='Авторизація')}">
         </nav>
         <div id="basic">
-            
-            <div class="info_section">
+            <div class="info_section">  
                 <div class="info_block" id="login_block">    
                     <form method="post" autocomplete="off">
                         <div class="form_field">
@@ -32,15 +31,16 @@
                             <button type="submit">
                                 Увійти
                             </button>
-                        </div>
-
-                        
-
+                        </div>   
                     </form>
+                    <a class="dramatical_link" href="/img/forget.jpg">
+                        Забули пароль?
+                    </a>
+                    <a class="dramatical_link" href="/register">
+                        Зареєструватися
+                    </a>
                 </div>
-                
             </div>	
-            
         </div>
         <footer th:replace="~{fragments/layout :: footer}">
         </footer>
