@@ -32,13 +32,20 @@ BODY {
 }
 
 .info_section {
-    /* min-height: calc(100vh - 180px); */
     justify-content: center;
 }
 
 .form_field {
     background-color: var(--black1);
     padding: 20px;
+    will-change: transform;
+}
+
+.form_field p {
+    background-color: var(--whiteIcon);
+    color: var(--black0);
+    border-radius: 5px;
+    padding: 5%;
 }
 
 .form_field:hover {

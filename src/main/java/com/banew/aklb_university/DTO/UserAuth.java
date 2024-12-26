@@ -1,4 +1,4 @@
-package com.banew.DTO;
+package com.banew.aklb_university.DTO;
 
 import lombok.Data;
 

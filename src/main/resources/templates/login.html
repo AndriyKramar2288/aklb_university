@@ -16,16 +16,22 @@
                 <div class="info_block" id="login_block">    
                     <form method="post" autocomplete="off">
                         <div class="form_field">
-                            <label>
+                            <label for="name">
                                 Ім'я користувача:
                             </label>
                             <input type="text" name="name" placeholder="Ім'я користувача"/>
+                            <p th:if="${error}">
+                                Вказане ім'я або пароль некоректні!
+                            </p>
                         </div>
                         <div class="form_field">
-                            <label>
+                            <label for="password">
                                 Пароль:
                             </label>
                             <input type="password" name="password" placeholder="Пароль"/>
+                            <p th:if="${error}">
+                                Вказане ім'я або пароль некоректні!
+                            </p>
                         </div>
                         <div class="form_button">
                             <button type="submit">

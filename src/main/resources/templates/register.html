@@ -14,42 +14,47 @@
         <div id="basic">
             <div class="info_section">
                 <div class="info_block" id="login_block">    
-                    <form method="post" autocomplete="off">
+                    <form method="post" autocomplete="off" id="customForm" th:object="${customForm}">
                         <div class="form_field">
                             <label for="username">
                                 Ім'я користувача (псевдонім):
                             </label>
-                            <input type="text" name="username" placeholder="Псевдо"/>
+                            <input type="text" th:field="*{username}" placeholder="Псевдо"/>
+                            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
                         </div>
                         <div class="form_field">
                             <label for="name">
                                 Ім'я:
                             </label>
-                            <input type="text" name="name" placeholder="Ім'я"/>
+                            <input type="text" th:field="*{name}" placeholder="Ім'я"/>
+                            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
                         </div>
                         <div class="form_field">
                             <label for="surname">
                                Прізвище:
                             </label>
-                            <input type="text" name="surname" placeholder="Прізвище"/>
+                            <input type="text" th:field="*{surname}" placeholder="Прізвище"/>
+                            <p th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></p>
                         </div>
                         <div class="form_field">
                             <label for="password">
                                Пароль:
                             </label>
-                            <input type="text" name="password" placeholder="Пароль"/>
+                            <input type="password" th:field="*{password}" placeholder="Пароль"/>
+                            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
                         </div>
                         <div class="form_field">
                             <label for="password2">
                                Пароль (ще раз):
                             </label>
-                            <input type="text" name="password2" placeholder="Пароль (ще раз)"/>
+                            <input type="password" th:field="*{password2}" placeholder="Пароль (ще раз)"/>
+                            <p th:if="${#fields.hasErrors('password2')}" th:errors="*{password2}"></p>
                         </div>
                         <div class="form_field">
                             <label for="position">
                                 Оберіть поточний статус:
                             </label>
-                            <select name="position">
+                            <select th:field="*{status}">
                                 <option value="STUDENT">
                                     Студент
                                 </option>

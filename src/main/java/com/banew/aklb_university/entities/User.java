@@ -1,6 +1,13 @@
 package com.banew.aklb_university.entities;
 
-import com.banew.other.Position;
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.banew.aklb_university.other.Position;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,10 +17,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @Entity
 @Table(name = "users")
-public class User {
+@NoArgsConstructor
+public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Long id;
@@ -22,4 +29,12 @@ public class User {
     private String name;
     private String surname;
     private Position position;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+    @Override
+    public String getUsername() {
+        return nickname;
+    }
 }
