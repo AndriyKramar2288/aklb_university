@@ -1,6 +1,5 @@
 package com.banew.aklb_university.Contollers;
 
-import com.banew.aklb_university.DTO.UserAuth;
 import com.banew.aklb_university.DTO.UserRegistration;
 import com.banew.aklb_university.entities.Publication;
 import com.banew.aklb_university.entities.User;
