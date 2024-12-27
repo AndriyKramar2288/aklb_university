@@ -8,6 +8,7 @@ import com.banew.aklb_university.repositories.PublicationRepository;
 import com.banew.aklb_university.repositories.UserRepository;
 import jakarta.validation.Valid;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RequestMapping(path = "/")
@@ -54,16 +54,22 @@ public class MainPageController {
         return "register";
     }
     
+    @GetMapping("/user")
+    public String userPage(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
+        return "user";
+    }
+    
+
     @PostMapping("/register")
-    public String postMethodName(@ModelAttribute("customForm") @Valid UserRegistration customForm, Errors errors) throws Exception {
+    public String registerPostPage(@ModelAttribute("customForm") @Valid UserRegistration customForm, Errors errors) throws Exception {
         if (errors.hasErrors()) {
             return "register";
         }
         else {
             userRepository.save(customForm.toUser(passwordEncoder));
             return "redirect:/login";
-        }
-            
+        }   
     }
     
 

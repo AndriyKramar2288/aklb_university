@@ -15,6 +15,8 @@
             <div class="info_section">
                 <div class="info_block" id="login_block">    
                     <form method="post" autocomplete="off" id="customForm" th:object="${customForm}">
+                        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+
                         <div class="form_field">
                             <label for="username">
                                 Ім'я користувача (псевдонім):

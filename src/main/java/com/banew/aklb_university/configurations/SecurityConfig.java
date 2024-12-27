@@ -44,9 +44,6 @@ public class SecurityConfig {
                 .passwordParameter("password")
                 .failureUrl("/login?error=true")
             )
-            .csrf(csrf -> csrf
-                .disable()
-            )
             .build();
     }
 }
