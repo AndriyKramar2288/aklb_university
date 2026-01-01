@@ -4,15 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${user.getNickname()}">User name</title>
+    <title>[[${user.getNickname()}]] - [[${user.getPosition()}]]</title>
 	<link rel="stylesheet" th:href="@{/css/global.css}" type='text/css'>
     <link rel="stylesheet" th:href="@{/css/forms.css}" type='text/css'>
 </head>
 <body>
-    <nav class="top_bar" th:replace="~{fragments/layout :: header(label=${user.getNickname()})}">
+    <nav class="top_bar" th:replace="~{fragments/layout :: header(label=${user.getNickname()}+' - ' + ${user.getPosition()})}">
     </nav>
     <div id="basic">
-
+        <div class="info_section">
+            <div class="info_block">
+                <h2 th:text="${user.getNickname()}"></h2>
+                <p>
+                    Посада: [[${user.getPosition()}]]
+                </p>
+            </div>
+        </div>
     </div>
     <footer th:replace="~{fragments/layout :: footer}">
     </footer>

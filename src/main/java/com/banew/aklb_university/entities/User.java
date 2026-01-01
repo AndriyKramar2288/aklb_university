@@ -1,5 +1,6 @@
 package com.banew.aklb_university.entities;
 
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -29,6 +30,8 @@ public class User implements UserDetails {
     private String name;
     private String surname;
     private Position position;
+    private String bio;
+    private Timestamp dateRegistration = new Timestamp(System.currentTimeMillis());
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
